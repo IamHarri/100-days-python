@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blog</title>
+</head>
+<body>
+{% for post in blog_post: %}
+  {% if post['id'] == 2: %}
+  <h1>{{post['title'].title()}}</h1>
+  <h1>{{ post['subtitle'] }}</h1>
+  {% endif %}
+{% endfor %}
+  
+</body>
+</html>
