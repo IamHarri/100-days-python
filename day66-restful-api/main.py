@@ -151,7 +151,7 @@ def patch_new_price(cafe_id):
 def delete_cafe(cafe_id):
   api_key = request.args.get("api-key")
   if api_key != "TopSecretAPIKey":
-    return jsonify(error={"Not Allowed": "Sorry, that's not allowed. Make sure you have the correct api-key."}), 403
+    return jsonify(error={"Forbidden": "Sorry, that's not allowed. Make sure you have the correct api-key."}), 403
   # cafe = db.get_or_404(Cafe, cafe_id)
   cafe = db.session.execute(db.select(Cafe).where(Cafe.id == cafe_id)).scalar()
   if cafe:
